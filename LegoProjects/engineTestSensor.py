@@ -13,25 +13,25 @@ BrickPiSetupSensors()
 power = 200
 
 while True:
-	BrickPiUpdateValues()
-	r1 = BrickPi.Sensor[PORT_2]
-	BrickPiUpdateValues()
-	r2 = BrickPi.Sensor[PORT_2]
-	BrickPiUpdateValues()
-	r3 = BrickPi.Sensor[PORT_2]
+    BrickPiUpdateValues()
+    r1 = BrickPi.Sensor[PORT_2]
+    BrickPiUpdateValues()
+    r2 = BrickPi.Sensor[PORT_2]
+    BrickPiUpdateValues()
+    r3 = BrickPi.Sensor[PORT_2]
 
-	if (r1==1 and r2==1 and r3==1 and r1 != 1023 and r2 != 1023 and r3 != 1023):
-		BrickPi.MotorSpeed[PORT_A] = power
-		BrickPi.MotorSpeed[PORT_B] = power
- 		BrickPi.MotorSpeed[PORT_C] = power
-	 	BrickPi.MotorSpeed[PORT_D] = power
-		print(BrickPi.Sensor[PORT_2])
-		BrickPiUpdateValues()
-	elif (r1 != 1023 and r2 != 1023 and r3 != 1023):
-		BrickPi.MotorSpeed[PORT_A] = 0
-		BrickPi.MotorSpeed[PORT_B] = 0
-		BrickPi.MotorSpeed[PORT_C] = 0
-		BrickPi.MotorSpeed[PORT_D] = 0
-		print(BrickPi.Sensor[PORT_2])
-		BrickPiUpdateValues()
-	time.sleep(.1)
+    if r1 == 1 and r2 == 1 and r3 == 1 and r1 != 1023 and r2 != 1023 and r3 != 1023:
+        BrickPi.MotorSpeed[PORT_A] = power
+        BrickPi.MotorSpeed[PORT_B] = power
+        BrickPi.MotorSpeed[PORT_C] = power
+        BrickPi.MotorSpeed[PORT_D] = power
+        print(BrickPi.Sensor[PORT_2])
+        BrickPiUpdateValues()
+    elif r1 != 1023 and r2 != 1023 and r3 != 1023:
+        BrickPi.MotorSpeed[PORT_A] = 0
+        BrickPi.MotorSpeed[PORT_B] = 0
+        BrickPi.MotorSpeed[PORT_C] = 0
+        BrickPi.MotorSpeed[PORT_D] = 0
+        print(BrickPi.Sensor[PORT_2])
+        BrickPiUpdateValues()
+    time.sleep(.1)

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="538b9ee9-1ed9-4da4-a9e2-5d01504e8d53" name="BrickPie1" url="http://192.168.1.60">
+        <fileTransfer host="192.168.1.60" port="22" privateKey="C:\ssh\key" rootFolder="/home/thobber" accessType="SFTP" passphrase="dfc7df93dfe8df99dfffdfefdfe0dfe6dfccdfcfdfc6dfc3dfd2df9bdf93df9e" username="thobber" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
