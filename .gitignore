@@ -13,7 +13,6 @@ __pycache__/
 # Distribution / packaging
 .Python
 env/
-build/
 develop-eggs/
 downloads/
 eggs/
@@ -298,7 +297,6 @@ tramp
 
 # cask packages
 .cask/
-dist/
 
 # Flycheck
 flycheck_*.el
