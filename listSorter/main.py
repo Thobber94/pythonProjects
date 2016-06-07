@@ -58,12 +58,17 @@ def save_file():
         file.close()
 
 
+def exit_program():
+    root.destroy()
+
+
 # Global variables
 inputFileGlobal = "I'm empty"
 inputText = "I am empty"
 
 # The main GUI
 root = Tk()
+root.wm_title("Duplicate remover")
 
 ### Main GUI ###
 menu_bar = Menu(root)
@@ -71,7 +76,7 @@ file_menu = Menu(menu_bar, tearoff=0)
 file_menu.add_command(label="Open", command=open_file)
 file_menu.add_separator()
 file_menu.add_command(label="Save", command=save_file)
-file_menu.add_command(label="Exit", command=root.quit())
+file_menu.add_command(label="Exit", command=exit_program)
 menu_bar.add_cascade(label="File", menu=file_menu)
 
 button = Button(root, text="Remove duplicates", command=remove_duplicates)
