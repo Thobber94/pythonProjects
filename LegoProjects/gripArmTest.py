@@ -1,6 +1,11 @@
 from __future__ import print_function
 from BrickPi import *
 
+# Global variables
+positionGrip = -764
+positionArm = 85
+positionRotate = -102
+
 
 # Function to clear all the engines (set the speed to 0)
 def clearEngines():
@@ -49,7 +54,8 @@ def arm_down(speed):
 
 # ### initB-C-D are for initializing the arm. Sets everything back to standard position
 def initB():
-    position = 7
+    global positionArm
+    position = positionArm
     positionFrom = position - 10
     positionTo = position + 10
     port = PORT_B
@@ -79,7 +85,8 @@ def initB():
 
 
 def initC():
-    position = -102
+    global positionRotate
+    position = positionRotate
     positionFrom = position - 10
     positionTo = position + 10
     port = PORT_C
@@ -111,7 +118,8 @@ def initC():
 
 
 def initD():
-    position = -864
+    global positionGrip
+    position = positionGrip
     positionFrom = position - 10
     positionTo = position + 10
     port = PORT_D
@@ -122,7 +130,7 @@ def initD():
     while BrickPi.Encoder[port] != position:
 
         BrickPiUpdateValues()
-        # print BrickPi.Encoder[port]
+        #print(BrickPi.Encoder[port])
         if BrickPi.Encoder[port] < position:
             BrickPi.MotorSpeed[port] = speed
             BrickPiUpdateValues()
@@ -194,7 +202,8 @@ while True:
         openarm(25)
         print("Opening grip")
     elif inp == "c":
-        closearm(25)
+        #closearm(25)
+        initD()
         print("Closing grip")
     elif inp == "w":
         arm_up(50)
