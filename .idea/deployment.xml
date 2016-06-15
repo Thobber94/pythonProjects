@@ -9,6 +9,34 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="BrickPie2">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/pythonProjects" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="BrickPie3">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/pythonProjects" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="BrickPie4">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/pythonProjects" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="BrickPie5">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/pythonProjects" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
     </serverData>
     <option name="myAutoUpload" value="ALWAYS" />
   </component>

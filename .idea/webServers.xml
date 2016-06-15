@@ -10,6 +10,38 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="7696c5f2-79da-4cf4-8fd4-8be7bba44138" name="BrickPie2" url="http://192.168.1.61">
+        <fileTransfer host="192.168.1.61" port="22" privateKey="C:\ssh\key" rootFolder="/home/thobber" accessType="SFTP" passphrase="dfc7df93dfe8df99dfffdfefdfe0dfe6dfccdfcfdfc6dfc3dfd2df9bdf93df9e" username="thobber" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="b571e3f5-7b34-4be1-82f3-0e222e66f6ec" name="BrickPie3" url="http://192.168.1.62">
+        <fileTransfer host="192.168.1.62" port="22" privateKey="C:\ssh\key" rootFolder="/home/thobber" accessType="SFTP" passphrase="dfc7df93dfe8df99dfffdfefdfe0dfe6dfccdfcfdfc6dfc3dfd2df9bdf93df9e" username="thobber" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="0b7eeec0-3f13-442e-b25d-af1e4a63521f" name="BrickPie4" url="http://192.168.1.63">
+        <fileTransfer host="192.168.1.63" port="22" privateKey="C:\ssh\key" rootFolder="/home/thobber" accessType="SFTP" passphrase="dfc7df93dfe8df99dfffdfefdfe0dfe6dfccdfcfdfc6dfc3dfd2df9bdf93df9e" username="thobber" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="c151eba5-c64a-4cec-a07f-a5907ce63e71" name="BrickPie5" url="http://192.168.1.64">
+        <fileTransfer host="192.168.1.64" port="22" privateKey="C:\ssh\key" rootFolder="/home/thobber" accessType="SFTP" passphrase="dfc7df93dfe8df99dfffdfefdfe0dfe6dfccdfcfdfc6dfc3dfd2df9bdf93df9e" username="thobber" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>
