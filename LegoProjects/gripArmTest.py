@@ -1,6 +1,8 @@
 from __future__ import print_function
 from BrickPi import *
 
+print("Starting... Please wait!")
+
 # BrickPiSetup setups all the engines
 BrickPiSetup()
 
@@ -16,9 +18,9 @@ BrickPi.Timeout = 1000
 BrickPiSetTimeout()
 
 # Global variables
-positionGrip = -764
-positionArm = 85
-positionRotate = -102
+positionArm = 940    # B
+positionRotate = -980   # C
+positionGrip = 426    # D
 
 
 # Function to clear all the engines (set the speed to 0)
@@ -33,36 +35,42 @@ def clearEngines():
 # Function to turn the engine clockwise (rotate the base)
 def clockwise(speed):
     clearEngines()
+    print("Moving clockwise")
     BrickPi.MotorSpeed[PORT_C] = speed
 
 
 # Same as over, just counterclockwise
 def counterclockwise(speed):
     clearEngines()
+    print("Moving counter clockwise")
     BrickPi.MotorSpeed[PORT_C] = -speed
 
 
 # Opens the grip
 def openarm(speed):
     clearEngines()
+    print("Opening grip")
     BrickPi.MotorSpeed[PORT_D] = speed
 
 
 # Closes the grip
 def closearm(speed):
     clearEngines()
+    print("Closing grip")
     BrickPi.MotorSpeed[PORT_D] = -speed
 
 
 # Raises the arm
 def arm_up(speed):
     clearEngines()
+    print("Raising arm")
     BrickPi.MotorSpeed[PORT_B] = speed
 
 
 # Lowers the arm
 def arm_down(speed):
     clearEngines()
+    print("Lowering arm")
     BrickPi.MotorSpeed[PORT_B] = -speed
 
 
@@ -73,7 +81,7 @@ def initB():
     positionFrom = position - 10
     positionTo = position + 10
     port = PORT_B
-    speed = 45
+    speed = 50
 
     clearEngines()
     BrickPiUpdateValues()
@@ -137,7 +145,7 @@ def initD():
     positionFrom = position - 10
     positionTo = position + 10
     port = PORT_D
-    speed = 20
+    speed = 10
 
     clearEngines()
     BrickPiUpdateValues()
@@ -190,9 +198,6 @@ def values():
 #        time.sleep(.01)
 
 
-print("Starting... Please wait!")
-# initB()
-
 # Simple GUI to let the user knows what to press on keyboard
 print("\n w: Up "
       "\n s: Down "
@@ -210,22 +215,24 @@ while True:
 
     if inp == "a":
         clockwise(50)
-        print("Moving clockwise")
+    elif inp == "aa":
+        clockwise(25)
     elif inp == "d":
         counterclockwise(50)
-        print("Moving counter clockwise")
+    elif inp == "dd":
+        counterclockwise(25)
     elif inp == "x":
         openarm(25)
-        print("Opening grip")
     elif inp == "c":
         closearm(25)
-        print("Closing grip")
     elif inp == "w":
         arm_up(50)
-        print("Raising arm")
+    elif inp == "ww":
+        arm_up(35)
     elif inp == "s":
         arm_down(40)
-        print("Lowering arm")
+    elif inp == "ss":
+        arm_down(20)
     elif inp == "q":
         sys.exit()
     elif inp == "v":
