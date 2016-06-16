@@ -1,6 +1,20 @@
 from __future__ import print_function
 from BrickPi import *
 
+# BrickPiSetup setups all the engines
+BrickPiSetup()
+
+# Enables all the engines on PORT_A to PORT_D
+#BrickPi.SensorType[PORT_1] = TYPE_SENSOR_EV3_COLOR_M2
+BrickPi.MotorEnable[PORT_A] = 1  # Extra
+BrickPi.MotorEnable[PORT_B] = 1  # Arm
+BrickPi.MotorEnable[PORT_C] = 1  # Grip
+BrickPi.MotorEnable[PORT_D] = 1  # Turn
+BrickPiSetupSensors()
+
+BrickPi.Timeout = 1000
+BrickPiSetTimeout()
+
 # Global variables
 positionGrip = -764
 positionArm = 85
@@ -161,18 +175,20 @@ def values():
         time.sleep(2)
 
 
-# BrickPiSetup setups all the engines
-BrickPiSetup()
+#def sensor():
+#    while True:
+#        numbers = []
+#        result = BrickPiUpdateValues()  # Ask BrickPi to update values for sensors/motors
+#        if not result:
+#            color_sensor = BrickPi.Sensor[PORT_1]
+#            numbers.append(color_sensor)
+#            if 1 in numbers:
+#                BrickPi.MotorSpeed[PORT_D] = 100
+#            else:
+#                BrickPi.MotorSpeed[PORT_D] = -100
+#
+#        time.sleep(.01)
 
-# Enables all the engines on PORT_A to PORT_D
-BrickPi.MotorEnable[PORT_A] = 1  # Extra
-BrickPi.MotorEnable[PORT_B] = 1  # Arm
-BrickPi.MotorEnable[PORT_C] = 1  # Grip
-BrickPi.MotorEnable[PORT_D] = 1  # Turn
-BrickPiSetupSensors()
-
-BrickPi.Timeout = 1000
-BrickPiSetTimeout()
 
 print("Starting... Please wait!")
 # initB()
@@ -202,8 +218,7 @@ while True:
         openarm(25)
         print("Opening grip")
     elif inp == "c":
-        #closearm(25)
-        initD()
+        closearm(25)
         print("Closing grip")
     elif inp == "w":
         arm_up(50)
@@ -219,6 +234,8 @@ while True:
         print("Returning to init position. \n Please wait...")
         initB()
         print("Finished!")
+    #elif inp == "e":
+    #   sensor()
     else:
         clearEngines()
         print("No button")

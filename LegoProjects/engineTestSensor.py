@@ -1,37 +1,28 @@
-from BrickPi import *
-import curses, time
+import re
 
-BrickPiSetup()
+from BrickPi import *  # import BrickPi.py file to use BrickPi operations
 
-BrickPi.MotorEnable[PORT_A] = 1
-BrickPi.MotorEnable[PORT_B] = 1
-BrickPi.MotorEnable[PORT_C] = 1
+BrickPiSetup()  # setup the serial port for communication
+
+BrickPi.SensorType[PORT_1] = TYPE_SENSOR_EV3_COLOR_M3
 BrickPi.MotorEnable[PORT_D] = 1
-BrickPi.SensorType[PORT_2] = TYPE_SENSOR_EV3_TOUCH_DEBOUNCE
 BrickPiSetupSensors()
 
-power = 200
-
 while True:
-	BrickPiUpdateValues()
-	r1 = BrickPi.Sensor[PORT_2]
-	BrickPiUpdateValues()
-	r2 = BrickPi.Sensor[PORT_2]
-	BrickPiUpdateValues()
-	r3 = BrickPi.Sensor[PORT_2]
+    numbers = []
+    result = BrickPiUpdateValues()  # Ask BrickPi to update values for sensors/motors
+    if not result:
+        color_sensor = BrickPi.Sensor[PORT_1]
+        numbers.append(str(color_sensor))
 
-	if (r1==1 and r2==1 and r3==1 and r1 != 1023 and r2 != 1023 and r3 != 1023):
-		BrickPi.MotorSpeed[PORT_A] = power
-		BrickPi.MotorSpeed[PORT_B] = power
- 		BrickPi.MotorSpeed[PORT_C] = power
-	 	BrickPi.MotorSpeed[PORT_D] = power
-		print(BrickPi.Sensor[PORT_2])
-		BrickPiUpdateValues()
-	elif (r1 != 1023 and r2 != 1023 and r3 != 1023):
-		BrickPi.MotorSpeed[PORT_A] = 0
-		BrickPi.MotorSpeed[PORT_B] = 0
-		BrickPi.MotorSpeed[PORT_C] = 0
-		BrickPi.MotorSpeed[PORT_D] = 0
-		print(BrickPi.Sensor[PORT_2])
-		BrickPiUpdateValues()
-	time.sleep(.1)
+        regex = re.compile('.*L')
+        l = numbers
+        matches = [string for string in l if not re.match(regex, string)]
+        correctList = filter(None, matches)
+        if correctList:
+            #correctListInt = list(map(int, correctList))
+            #print(correctListInt)
+            print(correctList)
+
+
+    time.sleep(.01)
