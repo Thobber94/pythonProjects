@@ -22,6 +22,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="LegoProjects.engineTest.BrickPi" />
+          <option value="LegoProjects.gripArmTest.*" />
         </list>
       </option>
     </inspection_tool>

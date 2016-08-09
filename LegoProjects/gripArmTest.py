@@ -18,9 +18,9 @@ BrickPi.Timeout = 1000
 BrickPiSetTimeout()
 
 # Global variables
-positionArm = 940    # B
-positionRotate = -980   # C
-positionGrip = 426    # D
+positionArm = -95   # B
+positionRotate = 350   # C
+positionGrip = 0    # D
 
 
 # Function to clear all the engines (set the speed to 0)
@@ -214,11 +214,11 @@ while True:
     inp = str(raw_input())
 
     if inp == "a":
-        clockwise(50)
+        clockwise(70)
     elif inp == "aa":
         clockwise(25)
     elif inp == "d":
-        counterclockwise(50)
+        counterclockwise(75)
     elif inp == "dd":
         counterclockwise(25)
     elif inp == "x":
@@ -226,11 +226,11 @@ while True:
     elif inp == "c":
         closearm(25)
     elif inp == "w":
-        arm_up(50)
+        arm_up(70)
     elif inp == "ww":
         arm_up(35)
     elif inp == "s":
-        arm_down(40)
+        arm_down(70)
     elif inp == "ss":
         arm_down(20)
     elif inp == "q":

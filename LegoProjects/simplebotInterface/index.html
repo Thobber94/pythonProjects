@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lego Race Interface</title>
+</head>
+<script type="text/javascript">
+
+    function setForward()
+    {
+        document.location='/usr/lib/cgi-bin/forward.cgi';
+    }
+
+</script>
+<body>
+    <div style="text-align:center">
+        <img src="forward.jpg" id="f" onmousedown="setForward()" onmouseup="clear01()">
+        <br>
+        <img src="left.jpg" id="l" onmousedown="setLeft()" onmouseup="clear01()">
+        <img src="right.jpg" id="r" onmousedown="setRight()" onmouseup="clear01()">
+        <br>
+        <img src="stop.jpg" id="s" onmousedown="clear()" onmouseup="clear01()">
+    </div>
+</body>
+</html>
